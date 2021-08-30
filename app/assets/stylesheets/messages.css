@@ -42,17 +42,80 @@
   background-color: #FFFFFF;
   width: calc(100vw - 300px);
 }
+
 .chat-header {
   height: 100px;
   padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}.header-title{
+  font-size: 24px;
+  color: #333;
+  margin-top: 36px;
+}.header-button{
+  margin-top: 40px;
+}.header-button a{
+  border: 1px solid darkred;
+  color: darkred;
+  text-decoration: none;
+  padding: 20px;
 }
+
 .messages {
   background-color: #FAFAFA;
   height: calc(100vh - 100px - 90px);
   padding: 46px 40px 0 ;
+  overflow: scroll;
+}.upper-message{
+  display: flex;
+}.message-user{
+  font-size: 16px;
+  color: #434A54;
+}.message-date{
+  margin-left: 10px;
+  color: #999;
+  font-size: 12px;
+}.message-content{
+  font-size: 14px;
+  color: #434A54;
+  margin-bottom: 40px;
+}.message{
+  margin: 10px 0 0 0;
+}.lower-message{
+  margin-top: 10px;
 }
+
+
 .form {
   background-color: #DDDDDD;
   height: 90px;
   padding: 20px 40px;
+  display: flex;
+}.form-message{
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  border: none;
+}.form-submit{
+  margin-left: 15px;
+  font-size: 16px;
+  color: white;
+  background-color: #38AEF0;
+  padding: 0 20px;
+  border: none;
+  height: 50px;
+}.form-input{
+  background-color: white;
+  width: 100%;
+  display: flex;
+}.hidden{/* これで『ファイルの選択』を非表示にできる */
+  display: none;
+}.form-image{
+  text-align: center;
+  padding: 12px;
+  margin: 5px 10px;
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  width: 60px;
 }
