@@ -1,0 +1,69 @@
+『Model』
+
+
+『Views』
+indexはコントローラー作成時に自動生成されています (6)
+   renderメソッドでmain_chatとside_barを読み込む (10)
+
+_main_chat.html.erbを手動で生成 (9)
+
+_side_bar.html.erbを手動で生成 (9)
+
+app/views/layouts/application.html.erb (7)
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    リセットCSSを指定することができました。
+
+
+『Controller』
+
+
+『routes』
+root to: "messages#index" (5)
+    messages_controllerのindexsクションが呼び出される
+
+
+『css』
+app/assets/stylesheets/application.css (8)
+    「*」は全ての要素に適用させるという意味
+    box-sizingとはwidthやheihgtで指定したサイズのまま変わらなくする
+
+messages.cssを手動で作成 (10)
+
+
+『ターミナル』
+% rails _6.0.0_ new chat-app -d mysql (1)
+    上記の内容でアプリの雛形作成
+
+% rails db:create (3)
+データベースの作成
+
+% rails g controller messages index (6)
+    コントローラー作成時に、コントローラー名に続けてアクション名を指定しました。
+    これにより、コントローラーの作成だけでなく、以下の内容が行われます。
+      ・messagesコントローラーにindexアクションが作られる
+      ・viewsのmessagesフォルダにindex.html.erbファイルが作られる
+
+
+『その他』
+config/database.yml
+    encoding: utf8 ← 変更 (2)
+
+config/application.rb (4)
+    module ChatApp
+      class Application < Rails::Application
+        config.load_defaults 6.0
+       # 中略
+          config.generators do |g|   
+          g.stylesheets false
+          g.javascripts false
+          g.helper false
+          g.test_framework false
+        end
+      end
+    end
+      rails gコマンドでコントローラーを作成すると、以下のようなファイルが自動生成されます。
+         ・生成したファイルに対応したスタイルシート
+         ・生成したファイルに対応したヘルパー
+         ・生成したファイルに対応したJavaScriptファイル
+         ・アプリケーションをテストするためのファイル
+       今回作成するChatAppでは、必要のないファイルですので、設定を変更して生成させないようにします。
